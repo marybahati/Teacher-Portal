@@ -15,6 +15,12 @@ const useStyles = makeStyles((theme) => ({
   },
   textField: {
     width: '100%',
+    '& .MuiOutlinedInput-root': {
+      '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+        borderColor: '#53c2c2',
+        boxShadow: `0 0 0 2px #53c2c2`,
+      },
+    },
   },
   listContainer: {
     position: 'absolute',
@@ -38,6 +44,9 @@ const useStyles = makeStyles((theme) => ({
   },
   addButton: {
     marginLeft: theme.spacing(1),
+    borderColor: '#4aa088',
+    color: '#4aa088',
+    textTransform: 'none',
   },
 }));
 
@@ -58,13 +67,13 @@ const SearchBar = ({ onSearch, searchTerm, books, onAdd, readingList }) => {
           {books.map((book, index) => (
             <ListItem key={index} className={classes.listItem}>
               <ListItemAvatar className={classes.listItemAvatar}>
-                <Avatar src={`${process.env.PUBLIC_URL}/${book.coverPhotoURL}`}/>
+                <Avatar src={`${process.env.PUBLIC_URL}/${book.coverPhotoURL}`} />
               </ListItemAvatar>
               <ListItemText primary={book.title} secondary={book.author} />
               {readingList.some((b) => b.title === book.title) ? (
                 <Button variant="outlined" disabled className={classes.addButton}>Added</Button>
               ) : (
-                <Button variant="outlined" color="primary" className={classes.addButton} onClick={() => onAdd(book)}>Add</Button>
+                <Button variant="outlined" className={classes.addButton} onClick={() => onAdd(book)}>Add</Button>
               )}
             </ListItem>
           ))}

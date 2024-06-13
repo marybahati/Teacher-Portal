@@ -21,8 +21,9 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
   },
   title: {
-    color: '#008080',
+    color: '#335C6E',
     marginBottom: theme.spacing(3),
+    textAlign: 'center',
   },
   loader: {
     display: 'flex',

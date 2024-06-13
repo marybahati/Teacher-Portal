@@ -15,7 +15,10 @@ const useStyles = makeStyles((theme) => ({
     height: 140,
   },
   removeButton: {
-    marginTop: theme.spacing(3),
+      marginTop: theme.spacing(3),
+      backgroundColor: '#f76434',
+      color: '#ffffff',
+      textTransform: 'none',
   },
   gridContainer: {
     display: 'flex',
@@ -54,7 +57,6 @@ const ReadingList = ({ readingList, onRemove }) => {
                 </Typography>
                 <Button
                   variant="contained"
-                  color="secondary"
                   className={classes.removeButton}
                   onClick={() => onRemove(book)}
                 >

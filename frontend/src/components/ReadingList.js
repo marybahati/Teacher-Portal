@@ -15,14 +15,14 @@ const useStyles = makeStyles((theme) => ({
     height: 140,
   },
   removeButton: {
-      marginTop: theme.spacing(3),
-      backgroundColor: '#f76434',
-      color: '#ffffff',
-      textTransform: 'none',
+    marginTop: theme.spacing(3),
+    backgroundColor: '#f76434',
+    color: '#ffffff',
+    textTransform: 'none',
   },
   gridContainer: {
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',  // Align items to the start (left side)
     flexWrap: 'wrap',
   },
   gridItem: {
